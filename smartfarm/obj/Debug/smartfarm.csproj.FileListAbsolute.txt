@@ -1,0 +1,108 @@
+I:\smartfarm\smartfarm\bin\Debug\smartfarm.exe.config
+I:\smartfarm\smartfarm\bin\Debug\smartfarm.exe
+I:\smartfarm\smartfarm\bin\Debug\smartfarm.pdb
+I:\smartfarm\smartfarm\bin\Debug\EntityFramework.dll
+I:\smartfarm\smartfarm\bin\Debug\EntityFramework.SqlServer.dll
+I:\smartfarm\smartfarm\bin\Debug\smartfarmmodel.exe
+I:\smartfarm\smartfarm\bin\Debug\smartfarmmodel.pdb
+I:\smartfarm\smartfarm\bin\Debug\EntityFramework.xml
+I:\smartfarm\smartfarm\bin\Debug\EntityFramework.SqlServer.xml
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.csprojResolveAssemblyReference.cache
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.cadastro_cargocs.resources
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.cadastroclassificacao.resources
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.cadastro_de_vacina.resources
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.cadastroracacs.resources
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.Cadastro_Animal.resources
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.Cadastro_Funcionario.resources
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.Consulta_animal.resources
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.Consulta_produção.resources
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.Consulta_vacinação.resources
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.Login.resources
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.Principal.resources
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.Properties.Resources.resources
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.csproj.GenerateResource.Cache
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.exe
+I:\smartfarm\smartfarm\obj\Debug\smartfarm.pdb
+I:\smartfarm 2\smartfarm\bin\Debug\smartfarm.exe.config
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.exe
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.pdb
+I:\smartfarm 2\smartfarm\bin\Debug\smartfarm.exe
+I:\smartfarm 2\smartfarm\bin\Debug\smartfarm.pdb
+I:\smartfarm 2\smartfarm\bin\Debug\EntityFramework.dll
+I:\smartfarm 2\smartfarm\bin\Debug\EntityFramework.SqlServer.dll
+I:\smartfarm 2\smartfarm\bin\Debug\smartfarmmodel.exe
+I:\smartfarm 2\smartfarm\bin\Debug\smartfarmmodel.pdb
+I:\smartfarm 2\smartfarm\bin\Debug\EntityFramework.xml
+I:\smartfarm 2\smartfarm\bin\Debug\EntityFramework.SqlServer.xml
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.csprojResolveAssemblyReference.cache
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.cadastro_cargocs.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.cadastroclassificacao.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.cadastro_de_vacina.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.cadastroracacs.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.Cadastro_Animal.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.Cadastro_Funcionario.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.consulta_funcionario.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.Consulta_animal.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.Consulta_produção.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.Consulta_vacinação.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.Login.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.Principal.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.Properties.Resources.resources
+I:\smartfarm 2\smartfarm\obj\Debug\smartfarm.csproj.GenerateResource.Cache
+I:\smartfarm 2 - Copia\smartfarm\bin\Debug\smartfarm.exe.config
+I:\smartfarm 2 - Copia\smartfarm\obj\Debug\smartfarm.exe
+I:\smartfarm 2 - Copia\smartfarm\obj\Debug\smartfarm.pdb
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.cadastro_cargocs.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.cadastroclassificacao.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.cadastro_de_vacina.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.cadastroracacs.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Cadastro_Animal.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Cadastro_Funcionario.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.consulta_funcionario.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Consulta_animal.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Consulta_produção.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Consulta_vacinação.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Login.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Principal.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Properties.Resources.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.csproj.GenerateResource.Cache
+I:\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\smartfarm.exe.config
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\smartfarm.exe.config
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.cadastro_cargocs.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.cadastroclassificacao.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.cadastro_de_vacina.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.cadastroracacs.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Cadastro_Animal.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Cadastro_Funcionario.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.consulta_funcionario.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Consulta_animal.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Consulta_produção.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Consulta_vacinação.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Login.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Principal.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Properties.Resources.resources
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.csproj.GenerateResource.Cache
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.csprojResolveAssemblyReference.cache
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\smartfarm.exe
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\smartfarm.pdb
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\EntityFramework.dll
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\EntityFramework.SqlServer.dll
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\smartfarmmodel.exe
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\smartfarmmodel.pdb
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\EntityFramework.xml
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\EntityFramework.SqlServer.xml
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.exe
+I:\padrao\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.pdb
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.exe
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.pdb
+I:\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\smartfarm.exe
+I:\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\smartfarm.pdb
+I:\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\EntityFramework.dll
+I:\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\EntityFramework.SqlServer.dll
+I:\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\smartfarmmodel.exe
+I:\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\smartfarmmodel.pdb
+I:\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\EntityFramework.xml
+I:\smartfarm 2 - Copia - Copia\smartfarm\bin\Debug\EntityFramework.SqlServer.xml
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.csprojResolveAssemblyReference.cache
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.Inicial.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Debug\smartfarm.cadastro_Produção.resources

@@ -1,0 +1,714 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED273ECC-EA67-481D-BB6B-BA8EA6976A17}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>smartfarm</RootNamespace>
+    <AssemblyName>smartfarm</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="buscaanimaldataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>buscaanimaldataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cadastro cargocs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastro cargocs.Designer.cs">
+      <DependentUpon>cadastro cargocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastro classificacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastro classificacao.Designer.cs">
+      <DependentUpon>cadastro classificacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastro de vacina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastro de vacina.Designer.cs">
+      <DependentUpon>cadastro de vacina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastro Produção.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastro Produção.Designer.cs">
+      <DependentUpon>cadastro Produção.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastroracacs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastroracacs.Designer.cs">
+      <DependentUpon>cadastroracacs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro_Animal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro_Animal.Designer.cs">
+      <DependentUpon>Cadastro_Animal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro_Funcionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro_Funcionario.Designer.cs">
+      <DependentUpon>Cadastro_Funcionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="consulta funcionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="consulta funcionario.Designer.cs">
+      <DependentUpon>consulta funcionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="consultaproduçãoset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>consultaproduçãoset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta_animal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta_animal.Designer.cs">
+      <DependentUpon>Consulta_animal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta_produção.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta_produção.Designer.cs">
+      <DependentUpon>Consulta_produção.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta_vacinação.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta_vacinação.Designer.cs">
+      <DependentUpon>Consulta_vacinação.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicial.Designer.cs">
+      <DependentUpon>Inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartFarmDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet111.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet111.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet211.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet211.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet232.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet232.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet24.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet24.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet25.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet25.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet26.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet26.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet27.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet27.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SmartFarmDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartFarmDataSet9.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="cadastro cargocs.resx">
+      <DependentUpon>cadastro cargocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastro classificacao.resx">
+      <DependentUpon>cadastro classificacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastro de vacina.resx">
+      <DependentUpon>cadastro de vacina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastro Produção.resx">
+      <DependentUpon>cadastro Produção.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastroracacs.resx">
+      <DependentUpon>cadastroracacs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro_Animal.resx">
+      <DependentUpon>Cadastro_Animal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro_Funcionario.resx">
+      <DependentUpon>Cadastro_Funcionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consulta funcionario.resx">
+      <DependentUpon>consulta funcionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta_animal.resx">
+      <DependentUpon>Consulta_animal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta_produção.resx">
+      <DependentUpon>Consulta_produção.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta_vacinação.resx">
+      <DependentUpon>Consulta_vacinação.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicial.resx">
+      <DependentUpon>Inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="buscaanimaldataset.xsc">
+      <DependentUpon>buscaanimaldataset.xsd</DependentUpon>
+    </None>
+    <None Include="buscaanimaldataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>buscaanimaldataset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="buscaanimaldataset.xss">
+      <DependentUpon>buscaanimaldataset.xsd</DependentUpon>
+    </None>
+    <None Include="consultaproduçãoset.xsc">
+      <DependentUpon>consultaproduçãoset.xsd</DependentUpon>
+    </None>
+    <None Include="consultaproduçãoset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>consultaproduçãoset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="consultaproduçãoset.xss">
+      <DependentUpon>consultaproduçãoset.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Cadastro_Funcionario.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SmartFarmDataSet10.xsc">
+      <DependentUpon>SmartFarmDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet10.xss">
+      <DependentUpon>SmartFarmDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet11.xsc">
+      <DependentUpon>SmartFarmDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet11.xss">
+      <DependentUpon>SmartFarmDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet111.xsc">
+      <DependentUpon>SmartFarmDataSet111.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet111.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet111.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet111.xss">
+      <DependentUpon>SmartFarmDataSet111.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet12.xsc">
+      <DependentUpon>SmartFarmDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet12.xss">
+      <DependentUpon>SmartFarmDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet13.xsc">
+      <DependentUpon>SmartFarmDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet13.xss">
+      <DependentUpon>SmartFarmDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet14.xsc">
+      <DependentUpon>SmartFarmDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet14.xss">
+      <DependentUpon>SmartFarmDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet15.xsc">
+      <DependentUpon>SmartFarmDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet15.xss">
+      <DependentUpon>SmartFarmDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet16.xsc">
+      <DependentUpon>SmartFarmDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet16.xss">
+      <DependentUpon>SmartFarmDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet17.xsc">
+      <DependentUpon>SmartFarmDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet17.xss">
+      <DependentUpon>SmartFarmDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet18.xsc">
+      <DependentUpon>SmartFarmDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet18.xss">
+      <DependentUpon>SmartFarmDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet19.xsc">
+      <DependentUpon>SmartFarmDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet19.xss">
+      <DependentUpon>SmartFarmDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet2.xsc">
+      <DependentUpon>SmartFarmDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet2.xss">
+      <DependentUpon>SmartFarmDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet20.xsc">
+      <DependentUpon>SmartFarmDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet20.xss">
+      <DependentUpon>SmartFarmDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet21.xsc">
+      <DependentUpon>SmartFarmDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet21.xss">
+      <DependentUpon>SmartFarmDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet211.xsc">
+      <DependentUpon>SmartFarmDataSet211.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet211.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet211.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet211.xss">
+      <DependentUpon>SmartFarmDataSet211.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet22.xsc">
+      <DependentUpon>SmartFarmDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet22.xss">
+      <DependentUpon>SmartFarmDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet232.xsc">
+      <DependentUpon>SmartFarmDataSet232.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet232.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet232.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet232.xss">
+      <DependentUpon>SmartFarmDataSet232.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet24.xsc">
+      <DependentUpon>SmartFarmDataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet24.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet24.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet24.xss">
+      <DependentUpon>SmartFarmDataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet25.xsc">
+      <DependentUpon>SmartFarmDataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet25.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet25.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet25.xss">
+      <DependentUpon>SmartFarmDataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet26.xsc">
+      <DependentUpon>SmartFarmDataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet26.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet26.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet26.xss">
+      <DependentUpon>SmartFarmDataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet27.xsc">
+      <DependentUpon>SmartFarmDataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet27.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet27.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet27.xss">
+      <DependentUpon>SmartFarmDataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet3.xsc">
+      <DependentUpon>SmartFarmDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet3.xss">
+      <DependentUpon>SmartFarmDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet4.xsc">
+      <DependentUpon>SmartFarmDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet4.xss">
+      <DependentUpon>SmartFarmDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet5.xsc">
+      <DependentUpon>SmartFarmDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet5.xss">
+      <DependentUpon>SmartFarmDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet6.xsc">
+      <DependentUpon>SmartFarmDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet6.xss">
+      <DependentUpon>SmartFarmDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet7.xsc">
+      <DependentUpon>SmartFarmDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet7.xss">
+      <DependentUpon>SmartFarmDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet8.xsc">
+      <DependentUpon>SmartFarmDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet8.xss">
+      <DependentUpon>SmartFarmDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet9.xsc">
+      <DependentUpon>SmartFarmDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="SmartFarmDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmartFarmDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SmartFarmDataSet9.xss">
+      <DependentUpon>SmartFarmDataSet9.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\smartfarmmodel\smartfarmmodel.csproj">
+      <Project>{7a4c8ee2-388b-4e99-9a44-306b32607e2e}</Project>
+      <Name>smartfarmmodel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

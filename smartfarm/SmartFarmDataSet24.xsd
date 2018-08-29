@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SmartFarmDataSet24" targetNamespace="http://tempuri.org/SmartFarmDataSet24.xsd" xmlns:mstns="http://tempuri.org/SmartFarmDataSet24.xsd" xmlns="http://tempuri.org/SmartFarmDataSet24.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SmartFarmConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SmartFarmConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.smartfarm.Properties.Settings.GlobalReference.Default.SmartFarmConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_funcionarioTableAdapter" GeneratorDataComponentClassName="tb_funcionarioTableAdapter" Name="tb_funcionario" UserDataComponentName="tb_funcionarioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SmartFarmConnectionString (Settings)" DbObjectName="SmartFarm.dbo.tb_funcionario" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Registro FROM dbo.tb_funcionario</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Registro" DataSetColumn="Registro" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SmartFarmDataSet24" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SmartFarmDataSet24" msprop:Generator_UserDSName="SmartFarmDataSet24">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tb_funcionario" msprop:Generator_TableClassName="tb_funcionarioDataTable" msprop:Generator_TableVarName="tabletb_funcionario" msprop:Generator_TablePropName="tb_funcionario" msprop:Generator_RowDeletingName="tb_funcionarioRowDeleting" msprop:Generator_RowChangingName="tb_funcionarioRowChanging" msprop:Generator_RowEvHandlerName="tb_funcionarioRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_funcionarioRowDeleted" msprop:Generator_UserTableName="tb_funcionario" msprop:Generator_RowChangedName="tb_funcionarioRowChanged" msprop:Generator_RowEvArgName="tb_funcionarioRowChangeEvent" msprop:Generator_RowClassName="tb_funcionarioRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Registro" msprop:Generator_ColumnVarNameInTable="columnRegistro" msprop:Generator_ColumnPropNameInRow="Registro" msprop:Generator_ColumnPropNameInTable="RegistroColumn" msprop:Generator_UserColumnName="Registro" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

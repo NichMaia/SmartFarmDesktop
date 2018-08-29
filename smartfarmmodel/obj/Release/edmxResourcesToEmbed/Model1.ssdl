@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SmartFarmModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tb_Animal">
+    <Key>
+      <PropertyRef Name="ID_Animal" />
+    </Key>
+    <Property Name="ID_Animal" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Raca" Type="varchar" MaxLength="50" />
+    <Property Name="Filiacao" Type="varchar" MaxLength="50" />
+    <Property Name="Classificacao" Type="varchar" MaxLength="50" />
+    <Property Name="DataNasc" Type="date" />
+    <Property Name="Box" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_Cargo">
+    <Key>
+      <PropertyRef Name="Cargo" />
+    </Key>
+    <Property Name="Cargo" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_Classificacao">
+    <Key>
+      <PropertyRef Name="Nome_Classificacao" />
+    </Key>
+    <Property Name="Nome_Classificacao" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_funcionarioo">
+    <Key>
+      <PropertyRef Name="Registro" />
+    </Key>
+    <Property Name="Nome" Type="varchar" MaxLength="50" />
+    <Property Name="Cargo" Type="varchar" MaxLength="50" />
+    <Property Name="DataNasc" Type="date" />
+    <Property Name="Endereco" Type="varchar" MaxLength="50" />
+    <Property Name="RG" Type="varchar" MaxLength="50" />
+    <Property Name="Cpf" Type="varchar" MaxLength="50" />
+    <Property Name="Telefone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Registro" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_Medicamentos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" />
+    <Property Name="Tipo" Type="varchar" MaxLength="50" />
+    <Property Name="Aplicacao" Type="varchar" MaxLength="50" />
+    <Property Name="Contraindicacao" Type="varchar" MaxLength="50" />
+    <Property Name="Fabricante" Type="varchar" MaxLength="50" />
+    <Property Name="Observacao" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_Movimentacao">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Local" Type="varchar" MaxLength="50" />
+    <Property Name="Data" Type="date" />
+    <Property Name="IDAnimal" Type="int" />
+  </EntityType>
+  <EntityType Name="tb_Raca">
+    <Key>
+      <PropertyRef Name="Nome_Raca" />
+    </Key>
+    <Property Name="Nome_Raca" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tb_Animal_tb_Classificacao">
+    <End Role="tb_Classificacao" Type="Self.tb_Classificacao" Multiplicity="0..1" />
+    <End Role="tb_Animal" Type="Self.tb_Animal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Classificacao">
+        <PropertyRef Name="Nome_Classificacao" />
+      </Principal>
+      <Dependent Role="tb_Animal">
+        <PropertyRef Name="Classificacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_Animal_tb_Classificacao1">
+    <End Role="tb_Classificacao" Type="Self.tb_Classificacao" Multiplicity="0..1" />
+    <End Role="tb_Animal" Type="Self.tb_Animal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Classificacao">
+        <PropertyRef Name="Nome_Classificacao" />
+      </Principal>
+      <Dependent Role="tb_Animal">
+        <PropertyRef Name="Classificacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_Cargo_tb_Cargo">
+    <End Role="tb_Cargo" Type="Self.tb_Cargo" Multiplicity="1" />
+    <End Role="tb_Cargo1" Type="Self.tb_Cargo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Cargo">
+        <PropertyRef Name="Cargo" />
+      </Principal>
+      <Dependent Role="tb_Cargo1">
+        <PropertyRef Name="Cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_funcionarioo_tb_Cargo">
+    <End Role="tb_Cargo" Type="Self.tb_Cargo" Multiplicity="0..1" />
+    <End Role="tb_funcionarioo" Type="Self.tb_funcionarioo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Cargo">
+        <PropertyRef Name="Cargo" />
+      </Principal>
+      <Dependent Role="tb_funcionarioo">
+        <PropertyRef Name="Cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SmartFarmModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Animal" EntityType="Self.tb_Animal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Cargo" EntityType="Self.tb_Cargo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Classificacao" EntityType="Self.tb_Classificacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_funcionarioo" EntityType="Self.tb_funcionarioo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Medicamentos" EntityType="Self.tb_Medicamentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Movimentacao" EntityType="Self.tb_Movimentacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Raca" EntityType="Self.tb_Raca" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tb_Animal_tb_Classificacao" Association="Self.FK_tb_Animal_tb_Classificacao">
+      <End Role="tb_Classificacao" EntitySet="tb_Classificacao" />
+      <End Role="tb_Animal" EntitySet="tb_Animal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_Animal_tb_Classificacao1" Association="Self.FK_tb_Animal_tb_Classificacao1">
+      <End Role="tb_Classificacao" EntitySet="tb_Classificacao" />
+      <End Role="tb_Animal" EntitySet="tb_Animal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_Cargo_tb_Cargo" Association="Self.FK_tb_Cargo_tb_Cargo">
+      <End Role="tb_Cargo" EntitySet="tb_Cargo" />
+      <End Role="tb_Cargo1" EntitySet="tb_Cargo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_funcionarioo_tb_Cargo" Association="Self.FK_tb_funcionarioo_tb_Cargo">
+      <End Role="tb_Cargo" EntitySet="tb_Cargo" />
+      <End Role="tb_funcionarioo" EntitySet="tb_funcionarioo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

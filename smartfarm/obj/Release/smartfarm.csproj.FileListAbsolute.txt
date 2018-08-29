@@ -1,0 +1,15 @@
+I:\smartfarm 2 - Copia - Copia\smartfarm\bin\Release\smartfarm.exe.config
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.cadastro_cargocs.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.cadastroclassificacao.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.cadastro_de_vacina.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.cadastroracacs.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.Cadastro_Animal.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.Cadastro_Funcionario.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.consulta_funcionario.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.Consulta_animal.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.Consulta_produção.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.Consulta_vacinação.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.Login.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.Principal.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.Properties.Resources.resources
+I:\smartfarm 2 - Copia - Copia\smartfarm\obj\Release\smartfarm.csproj.GenerateResource.Cache

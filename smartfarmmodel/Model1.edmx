@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SmartFarmModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tb_Animal">
+          <Key>
+            <PropertyRef Name="ID_Animal" />
+          </Key>
+          <Property Name="ID_Animal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Raca" Type="varchar" MaxLength="50" />
+          <Property Name="Filiacao" Type="varchar" MaxLength="50" />
+          <Property Name="Classificacao" Type="varchar" MaxLength="50" />
+          <Property Name="DataNasc" Type="date" />
+          <Property Name="Box" Type="varchar" MaxLength="50" />
+          <Property Name="Registro_animal" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_Cargo">
+          <Key>
+            <PropertyRef Name="Cargo" />
+          </Key>
+          <Property Name="Cargo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_funcionario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" />
+          <Property Name="Rg" Type="varchar" MaxLength="50" />
+          <Property Name="cpf" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cargo" Type="varchar" MaxLength="50" />
+          <Property Name="Registro" Type="varchar" MaxLength="50" />
+          <Property Name="Telefone" Type="varchar" MaxLength="50" />
+          <Property Name="DataNasc" Type="date" />
+        </EntityType>
+        <EntityType Name="tb_Movimentacao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Local" Type="varchar" MaxLength="50" />
+          <Property Name="Data" Type="date" />
+          <Property Name="IDAnimal" Type="int" />
+        </EntityType>
+        <EntityType Name="Tb_Produção">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Registro_animal" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantidade" Type="int" />
+          <Property Name="Data" Type="date" />
+        </EntityType>
+        <EntityType Name="tb_Raca">
+          <Key>
+            <PropertyRef Name="Nome_Raca" />
+          </Key>
+          <Property Name="Nome_Raca" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vacinação">
+          <Key>
+            <PropertyRef Name="ID_animal" />
+          </Key>
+          <Property Name="ID_animal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vacina" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Data" Type="date" Nullable="false" />
+          <Property Name="Registro" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tb_Cargo_tb_Cargo">
+          <End Role="tb_Cargo" Type="Self.tb_Cargo" Multiplicity="1" />
+          <End Role="tb_Cargo1" Type="Self.tb_Cargo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Cargo">
+              <PropertyRef Name="Cargo" />
+            </Principal>
+            <Dependent Role="tb_Cargo1">
+              <PropertyRef Name="Cargo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SmartFarmModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Animal" EntityType="Self.tb_Animal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Cargo" EntityType="Self.tb_Cargo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_funcionario" EntityType="Self.tb_funcionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Movimentacao" EntityType="Self.tb_Movimentacao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Produção" EntityType="Self.Tb_Produção" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Raca" EntityType="Self.tb_Raca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vacinação" EntityType="Self.Vacinação" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tb_Cargo_tb_Cargo" Association="Self.FK_tb_Cargo_tb_Cargo">
+            <End Role="tb_Cargo" EntitySet="tb_Cargo" />
+            <End Role="tb_Cargo1" EntitySet="tb_Cargo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SmartFarmModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tb_Cargo">
+          <Key>
+            <PropertyRef Name="Cargo" />
+          </Key>
+          <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tb_Cargo1" Relationship="Self.FK_tb_Cargo_tb_Cargo" FromRole="tb_Cargo" ToRole="tb_Cargo1" />
+          <NavigationProperty Name="tb_Cargo2" Relationship="Self.FK_tb_Cargo_tb_Cargo" FromRole="tb_Cargo1" ToRole="tb_Cargo" />
+        </EntityType>
+        <EntityType Name="tb_Movimentacao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Local" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Data" Type="DateTime" Precision="0" />
+          <Property Name="IDAnimal" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tb_Raca">
+          <Key>
+            <PropertyRef Name="Nome_Raca" />
+          </Key>
+          <Property Name="Nome_Raca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tb_Cargo_tb_Cargo">
+          <End Role="tb_Cargo" Type="Self.tb_Cargo" Multiplicity="1" />
+          <End Role="tb_Cargo1" Type="Self.tb_Cargo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Cargo">
+              <PropertyRef Name="Cargo" />
+            </Principal>
+            <Dependent Role="tb_Cargo1">
+              <PropertyRef Name="Cargo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SmartFarmEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="tb_Cargo" EntityType="Self.tb_Cargo" />
+          <EntitySet Name="tb_Movimentacao" EntityType="Self.tb_Movimentacao" />
+          <EntitySet Name="tb_Raca" EntityType="Self.tb_Raca" />
+          <AssociationSet Name="FK_tb_Cargo_tb_Cargo" Association="Self.FK_tb_Cargo_tb_Cargo">
+            <End Role="tb_Cargo" EntitySet="tb_Cargo" />
+            <End Role="tb_Cargo1" EntitySet="tb_Cargo" />
+          </AssociationSet>
+          <EntitySet Name="tb_funcionario" EntityType="SmartFarmModel.tb_funcionario" />
+          <EntitySet Name="Vacinação" EntityType="SmartFarmModel.Vacinação" />
+          <EntitySet Name="Tb_Produção" EntityType="SmartFarmModel.Tb_Produção" />
+          <EntitySet Name="tb_Animal" EntityType="SmartFarmModel.tb_Animal" />
+        </EntityContainer>
+        <EntityType Name="tb_funcionario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cpf" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Registro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataNasc" Type="DateTime" Precision="0" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Vacinação">
+          <Key>
+            <PropertyRef Name="ID_animal" />
+          </Key>
+          <Property Name="ID_animal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vacina" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Registro" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tb_Produção">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Registro_animal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantidade" Type="Int32" />
+          <Property Name="Data" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="tb_Animal">
+          <Key>
+            <PropertyRef Name="ID_Animal" />
+          </Key>
+          <Property Name="ID_Animal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Raca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Filiacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Classificacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataNasc" Type="DateTime" Precision="0" />
+          <Property Name="Box" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Registro_animal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SmartFarmModelStoreContainer" CdmEntityContainer="SmartFarmEntities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SmartFarmModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Cargo">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Cargo">
+              <MappingFragment StoreEntitySet="tb_Cargo">
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Movimentacao">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Movimentacao">
+              <MappingFragment StoreEntitySet="tb_Movimentacao">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Local" ColumnName="Local" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="IDAnimal" ColumnName="IDAnimal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Raca">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Raca">
+              <MappingFragment StoreEntitySet="tb_Raca">
+                <ScalarProperty Name="Nome_Raca" ColumnName="Nome_Raca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_funcionario">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_funcionario">
+              <MappingFragment StoreEntitySet="tb_funcionario">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DataNasc" ColumnName="DataNasc" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Registro" ColumnName="Registro" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="cpf" ColumnName="cpf" />
+                <ScalarProperty Name="Rg" ColumnName="Rg" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vacinação">
+            <EntityTypeMapping TypeName="SmartFarmModel.Vacinação">
+              <MappingFragment StoreEntitySet="Vacinação">
+                <ScalarProperty Name="Registro" ColumnName="Registro" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Vacina" ColumnName="Vacina" />
+                <ScalarProperty Name="ID_animal" ColumnName="ID_animal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Produção">
+            <EntityTypeMapping TypeName="SmartFarmModel.Tb_Produção">
+              <MappingFragment StoreEntitySet="Tb_Produção">
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="Registro_animal" ColumnName="Registro_animal" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Animal">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Animal">
+              <MappingFragment StoreEntitySet="tb_Animal">
+                <ScalarProperty Name="Registro_animal" ColumnName="Registro_animal" />
+                <ScalarProperty Name="Box" ColumnName="Box" />
+                <ScalarProperty Name="DataNasc" ColumnName="DataNasc" />
+                <ScalarProperty Name="Classificacao" ColumnName="Classificacao" />
+                <ScalarProperty Name="Filiacao" ColumnName="Filiacao" />
+                <ScalarProperty Name="Raca" ColumnName="Raca" />
+                <ScalarProperty Name="ID_Animal" ColumnName="ID_Animal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

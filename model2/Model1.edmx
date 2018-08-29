@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SmartFarmModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tb_Animal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Raca" Type="varchar" MaxLength="50" />
+          <Property Name="Classificacao" Type="varchar" MaxLength="50" />
+          <Property Name="Filiacao" Type="varchar" MaxLength="50" />
+          <Property Name="DataNasc" Type="date" />
+          <Property Name="Alimentacao" Type="varchar" MaxLength="50" />
+          <Property Name="Box" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tb_Cargo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_Classificacao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_funcionario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Inscricao" Type="int" />
+          <Property Name="Cargo" Type="varchar" MaxLength="50" />
+          <Property Name="Especializacao" Type="varchar" MaxLength="50" />
+          <Property Name="Registro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Endereco" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_Login">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Usuario" Type="varchar" MaxLength="50" />
+          <Property Name="Senha" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_Medicamentos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" />
+          <Property Name="Tipo" Type="varchar" MaxLength="50" />
+          <Property Name="Aplicacao" Type="varchar" MaxLength="50" />
+          <Property Name="Contraindicacao" Type="varchar" MaxLength="50" />
+          <Property Name="Fabricante" Type="varchar" MaxLength="50" />
+          <Property Name="Observacao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_Producao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Periodo" Type="date" />
+          <Property Name="ProdMedia" Type="float" />
+          <Property Name="Qtd" Type="float" />
+          <Property Name="IDAnimal" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_Proprietario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CPR" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_Raca">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_Usuario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nchar" MaxLength="10" />
+          <Property Name="CPF" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="RG" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Telefone" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="20" />
+          <Property Name="Sexo" Type="bit" />
+          <Property Name="DataNasc" Type="date" />
+        </EntityType>
+        <Association Name="FK_tb_funcionario_tb_Usuario">
+          <End Role="tb_Usuario" Type="Self.tb_Usuario" Multiplicity="1" />
+          <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Usuario">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_funcionario">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_Producao_tb_Animal">
+          <End Role="tb_Animal" Type="Self.tb_Animal" Multiplicity="0..1" />
+          <End Role="tb_Producao" Type="Self.tb_Producao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Animal">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_Producao">
+              <PropertyRef Name="IDAnimal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_Proprietario_tb_Usuario">
+          <End Role="tb_Usuario" Type="Self.tb_Usuario" Multiplicity="1" />
+          <End Role="tb_Proprietario" Type="Self.tb_Proprietario" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Usuario">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_Proprietario">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SmartFarmModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Animal" EntityType="Self.tb_Animal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Cargo" EntityType="Self.tb_Cargo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Classificacao" EntityType="Self.tb_Classificacao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_funcionario" EntityType="Self.tb_funcionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Login" EntityType="Self.tb_Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Medicamentos" EntityType="Self.tb_Medicamentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Producao" EntityType="Self.tb_Producao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Proprietario" EntityType="Self.tb_Proprietario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Raca" EntityType="Self.tb_Raca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Usuario" EntityType="Self.tb_Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tb_funcionario_tb_Usuario" Association="Self.FK_tb_funcionario_tb_Usuario">
+            <End Role="tb_Usuario" EntitySet="tb_Usuario" />
+            <End Role="tb_funcionario" EntitySet="tb_funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_Producao_tb_Animal" Association="Self.FK_tb_Producao_tb_Animal">
+            <End Role="tb_Animal" EntitySet="tb_Animal" />
+            <End Role="tb_Producao" EntitySet="tb_Producao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_Proprietario_tb_Usuario" Association="Self.FK_tb_Proprietario_tb_Usuario">
+            <End Role="tb_Usuario" EntitySet="tb_Usuario" />
+            <End Role="tb_Proprietario" EntitySet="tb_Proprietario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SmartFarmModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tb_Animal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Raca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Classificacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Filiacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataNasc" Type="DateTime" Precision="0" />
+          <Property Name="Alimentacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Box" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_Producao" Relationship="Self.FK_tb_Producao_tb_Animal" FromRole="tb_Animal" ToRole="tb_Producao" />
+        </EntityType>
+        <EntityType Name="tb_Cargo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_Classificacao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_funcionario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Inscricao" Type="Int32" />
+          <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Especializacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Registro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_Usuario" Relationship="Self.FK_tb_funcionario_tb_Usuario" FromRole="tb_funcionario" ToRole="tb_Usuario" />
+        </EntityType>
+        <EntityType Name="tb_Login">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_Medicamentos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aplicacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contraindicacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fabricante" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Observacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_Producao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Periodo" Type="DateTime" Precision="0" />
+          <Property Name="ProdMedia" Type="Double" />
+          <Property Name="Qtd" Type="Double" />
+          <Property Name="IDAnimal" Type="Int32" />
+          <NavigationProperty Name="tb_Animal" Relationship="Self.FK_tb_Producao_tb_Animal" FromRole="tb_Producao" ToRole="tb_Animal" />
+        </EntityType>
+        <EntityType Name="tb_Proprietario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="CPR" Type="Int32" />
+          <NavigationProperty Name="tb_Usuario" Relationship="Self.FK_tb_Proprietario_tb_Usuario" FromRole="tb_Proprietario" ToRole="tb_Usuario" />
+        </EntityType>
+        <EntityType Name="tb_Raca">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_Usuario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CPF" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sexo" Type="Boolean" />
+          <Property Name="DataNasc" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tb_funcionario" Relationship="Self.FK_tb_funcionario_tb_Usuario" FromRole="tb_Usuario" ToRole="tb_funcionario" />
+          <NavigationProperty Name="tb_Proprietario" Relationship="Self.FK_tb_Proprietario_tb_Usuario" FromRole="tb_Usuario" ToRole="tb_Proprietario" />
+        </EntityType>
+        <Association Name="FK_tb_Producao_tb_Animal">
+          <End Role="tb_Animal" Type="Self.tb_Animal" Multiplicity="0..1" />
+          <End Role="tb_Producao" Type="Self.tb_Producao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Animal">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_Producao">
+              <PropertyRef Name="IDAnimal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_funcionario_tb_Usuario">
+          <End Role="tb_Usuario" Type="Self.tb_Usuario" Multiplicity="1" />
+          <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Usuario">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_funcionario">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_Proprietario_tb_Usuario">
+          <End Role="tb_Usuario" Type="Self.tb_Usuario" Multiplicity="1" />
+          <End Role="tb_Proprietario" Type="Self.tb_Proprietario" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Usuario">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_Proprietario">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SmartFarmEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="tb_Animal" EntityType="Self.tb_Animal" />
+          <EntitySet Name="tb_Cargo" EntityType="Self.tb_Cargo" />
+          <EntitySet Name="tb_Classificacao" EntityType="Self.tb_Classificacao" />
+          <EntitySet Name="tb_funcionario" EntityType="Self.tb_funcionario" />
+          <EntitySet Name="tb_Login" EntityType="Self.tb_Login" />
+          <EntitySet Name="tb_Medicamentos" EntityType="Self.tb_Medicamentos" />
+          <EntitySet Name="tb_Producao" EntityType="Self.tb_Producao" />
+          <EntitySet Name="tb_Proprietario" EntityType="Self.tb_Proprietario" />
+          <EntitySet Name="tb_Raca" EntityType="Self.tb_Raca" />
+          <EntitySet Name="tb_Usuario" EntityType="Self.tb_Usuario" />
+          <AssociationSet Name="FK_tb_Producao_tb_Animal" Association="Self.FK_tb_Producao_tb_Animal">
+            <End Role="tb_Animal" EntitySet="tb_Animal" />
+            <End Role="tb_Producao" EntitySet="tb_Producao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_funcionario_tb_Usuario" Association="Self.FK_tb_funcionario_tb_Usuario">
+            <End Role="tb_Usuario" EntitySet="tb_Usuario" />
+            <End Role="tb_funcionario" EntitySet="tb_funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_Proprietario_tb_Usuario" Association="Self.FK_tb_Proprietario_tb_Usuario">
+            <End Role="tb_Usuario" EntitySet="tb_Usuario" />
+            <End Role="tb_Proprietario" EntitySet="tb_Proprietario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SmartFarmModelStoreContainer" CdmEntityContainer="SmartFarmEntities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SmartFarmModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Animal">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Animal">
+              <MappingFragment StoreEntitySet="tb_Animal">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Raca" ColumnName="Raca" />
+                <ScalarProperty Name="Classificacao" ColumnName="Classificacao" />
+                <ScalarProperty Name="Filiacao" ColumnName="Filiacao" />
+                <ScalarProperty Name="DataNasc" ColumnName="DataNasc" />
+                <ScalarProperty Name="Alimentacao" ColumnName="Alimentacao" />
+                <ScalarProperty Name="Box" ColumnName="Box" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Cargo">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Cargo">
+              <MappingFragment StoreEntitySet="tb_Cargo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Classificacao">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Classificacao">
+              <MappingFragment StoreEntitySet="tb_Classificacao">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_funcionario">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_funcionario">
+              <MappingFragment StoreEntitySet="tb_funcionario">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Inscricao" ColumnName="Inscricao" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="Especializacao" ColumnName="Especializacao" />
+                <ScalarProperty Name="Registro" ColumnName="Registro" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Login">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Login">
+              <MappingFragment StoreEntitySet="tb_Login">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Medicamentos">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Medicamentos">
+              <MappingFragment StoreEntitySet="tb_Medicamentos">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Aplicacao" ColumnName="Aplicacao" />
+                <ScalarProperty Name="Contraindicacao" ColumnName="Contraindicacao" />
+                <ScalarProperty Name="Fabricante" ColumnName="Fabricante" />
+                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Producao">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Producao">
+              <MappingFragment StoreEntitySet="tb_Producao">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="ProdMedia" ColumnName="ProdMedia" />
+                <ScalarProperty Name="Qtd" ColumnName="Qtd" />
+                <ScalarProperty Name="IDAnimal" ColumnName="IDAnimal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Proprietario">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Proprietario">
+              <MappingFragment StoreEntitySet="tb_Proprietario">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CPR" ColumnName="CPR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Raca">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Raca">
+              <MappingFragment StoreEntitySet="tb_Raca">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Usuario">
+            <EntityTypeMapping TypeName="SmartFarmModel.tb_Usuario">
+              <MappingFragment StoreEntitySet="tb_Usuario">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="DataNasc" ColumnName="DataNasc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

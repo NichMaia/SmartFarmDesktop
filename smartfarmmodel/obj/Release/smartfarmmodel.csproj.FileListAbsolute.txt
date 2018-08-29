@@ -1,0 +1,2 @@
+I:\smartfarm 2 - Copia - Copia\smartfarmmodel\obj\Release\smartfarmmodel.Properties.Resources.resources
+I:\smartfarm 2 - Copia - Copia\smartfarmmodel\obj\Release\smartfarmmodel.csproj.GenerateResource.Cache

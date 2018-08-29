@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smartfarm", "smartfarm\smartfarm.csproj", "{ED273ECC-EA67-481D-BB6B-BA8EA6976A17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smartfarmmodel", "smartfarmmodel\smartfarmmodel.csproj", "{7A4C8EE2-388B-4E99-9A44-306B32607E2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED273ECC-EA67-481D-BB6B-BA8EA6976A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED273ECC-EA67-481D-BB6B-BA8EA6976A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED273ECC-EA67-481D-BB6B-BA8EA6976A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED273ECC-EA67-481D-BB6B-BA8EA6976A17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A4C8EE2-388B-4E99-9A44-306B32607E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A4C8EE2-388B-4E99-9A44-306B32607E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A4C8EE2-388B-4E99-9A44-306B32607E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A4C8EE2-388B-4E99-9A44-306B32607E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
